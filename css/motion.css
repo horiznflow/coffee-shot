@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Motion: keyframes, hero intro, scroll reveal, reduced-motion overrides
+   ========================================================================== */
+
+/* ---------- Keyframes ---------- */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ---------- Hero intro (class set in <head>, cleared by js/modules/intro.js) ---------- */
+.intro-pending [data-intro] {
+  opacity: 0;
+}
+
+/* ---------- Scroll reveal (enabled by js/modules/reveal.js) ---------- */
+.rv-on .rv {
+  transition: opacity .7s var(--expo), transform .7s var(--expo);
+}
+
+.rv-on .rv:not(.in) {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-video {
+    display: none;
+  }
+
+  .hero-still {
+    display: block;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .intro-pending [data-intro] {
+    opacity: 1;
+  }
+
+  .parallax img {
+    height: 100%;
+    margin-top: 0;
+    transform: none !important;
+  }
+}

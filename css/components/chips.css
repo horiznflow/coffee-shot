@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Chips: small outlined tags (Vinyl Sessions, carta highlights)
+   ========================================================================== */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 9px 14px;
+  border: 1px solid rgba(242, 238, 232, .2);
+  border-radius: 999px;
+  background: rgba(17, 17, 17, .4);
+  font-size: 12px;
+  color: var(--text);
+}

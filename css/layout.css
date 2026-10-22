@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Layout primitives + shared typography
+   ========================================================================== */
+
+.sec {
+  position: relative;
+  padding: 128px 0;
+}
+
+.wrap {
+  position: relative;
+  z-index: 2;
+  width: min(var(--container), 100% - 2 * var(--gs));
+  margin: 0 auto;
+}
+
+/* Section label: "Concepto ————" */
+.label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 56px;
+  font-size: 13px;
+  line-height: 1.2;
+  color: var(--accent);
+}
+
+.label .rule {
+  flex: 1;
+  height: 1px;
+  background: var(--anth);
+}
+
+.label .tag {
+  white-space: nowrap;
+}
+
+/* Section title */
+.h2 {
+  margin: 0 0 28px;
+  font-size: 56px;
+  line-height: 1;
+  letter-spacing: -.01em;
+  text-wrap: balance;
+}
+
+.h2 span {
+  display: block;
+}
+
+.body-lg {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+@media (max-width: 649.98px) {
+  .sec {
+    padding: 88px 0;
+  }
+
+  .label {
+    margin-bottom: 40px;
+  }
+
+  .h2 {
+    font-size: 40px;
+  }
+}

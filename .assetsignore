@@ -1,0 +1,12 @@
+.git
+.assetsignore
+wrangler.jsonc
+README.md
+
+# Source images kept for editing, not used by the pages
+assets/images/logo.jpeg
+assets/images/breakfast.png
+assets/images/breakfast.webp
+assets/images/cocteleria.png
+assets/images/dessert.jpg
+assets/images/salon.jpg

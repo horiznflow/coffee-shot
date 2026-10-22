@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+
+:root {
+  /* Color */
+  --bg: #111111;
+  --bg-deep: #0B0B0B;
+  --char: #1C1C1C;
+  --anth: #282828;
+  --text: #F2EEE8;
+  --muted: #A8A29A;
+  --accent: #C9783A;
+  --accent-h: #E0915A;
+  --pill: #F2EEE8;
+  --disc: #1C1C1C;
+  --icon: #C98A55;
+  --cup: #6B4A33;
+
+  /* Type */
+  --f-display: "Archivo", "Archivo Narrow", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  /* Motion */
+  --expo: cubic-bezier(.16, 1, .3, 1);
+
+  /* Layout */
+  --u: 1px;                         /* hero scale unit, redefined inside .hero */
+  --container: 1200px;
+  --gs: clamp(18px, 5.6vw, 32px);   /* side gutter */
+  --radius: 20px;
+  /* Breakpoints: mobile < 650px, stacked grids < 900px, 2-col menu < 1100px
+     (media queries can't read vars) */
+}

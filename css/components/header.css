@@ -1,0 +1,232 @@
+/* ==========================================================================
+   Header over the hero: logo, nav pill, mobile menu
+   (sizes use the hero's --u; see css/sections/hero.css + js/modules/menu.js)
+   ========================================================================== */
+
+.hdr {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hdr > * {
+  pointer-events: auto;
+}
+
+.logo {
+  position: absolute;
+  left: calc(16 * var(--u));
+  top: calc(16 * var(--u));
+}
+
+/* ---------- Nav pill ---------- */
+.nav {
+  position: absolute;
+  right: calc(16 * var(--u));
+  top: calc(16 * var(--u));
+  height: calc(47 * var(--u));
+  display: flex;
+  align-items: center;
+  padding: 0 calc(4 * var(--u)) 0 calc(24 * var(--u));
+  background: #000;
+  border-radius: 999px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: calc(24 * var(--u));
+  margin: 0 calc(18 * var(--u)) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-links li {
+  display: flex;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6 * var(--u));
+  font-size: calc(15 * var(--u));
+  line-height: 1;
+  color: var(--text);
+  white-space: nowrap;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent-h);
+}
+
+/* ---------- Language switch (inside the nav pill) ---------- */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: calc(2 * var(--u));
+  margin: 0 calc(14 * var(--u)) 0 0;
+  padding-left: calc(14 * var(--u));
+  border-left: 1px solid var(--anth);
+}
+
+.lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  height: calc(32 * var(--u));
+  padding: 0 calc(6 * var(--u));
+  font-size: calc(12 * var(--u));
+  color: var(--muted);
+  transition: color .2s;
+}
+
+.lang-switch a:hover {
+  color: var(--accent-h);
+}
+
+.lang-switch a[aria-current="page"] {
+  color: var(--text);
+}
+
+/* Mobile shortcut to the other language, next to the burger */
+.lang-m {
+  display: none;
+  place-items: center;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #000;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.lang-m:hover {
+  color: var(--accent-h);
+}
+
+/* ---------- Burger (mobile only) ---------- */
+.mbtn {
+  appearance: none;
+  display: none;
+  place-items: center;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #000;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.mbtn svg {
+  width: 18px;
+  height: 12px;
+  overflow: visible;
+}
+
+.mbtn path {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  transform-box: view-box;
+  transform-origin: 9px 6px;
+  transition: transform .35s var(--expo), opacity .2s;
+}
+
+.mbtn[aria-expanded="true"] .b1 { transform: rotate(45deg) translateY(5px); }
+.mbtn[aria-expanded="true"] .b2 { opacity: 0; }
+.mbtn[aria-expanded="true"] .b3 { transform: rotate(-45deg) translateY(-5px); }
+
+/* ---------- Mobile: dropdown menu ---------- */
+@media (max-width: 649.98px) {
+  .logo {
+    left: max(var(--g), env(safe-area-inset-left));
+    top: calc(var(--g) + env(safe-area-inset-top));
+  }
+
+  .lang-m {
+    display: grid;
+    right: calc(max(var(--g), env(safe-area-inset-right)) + 56px);
+    top: calc(var(--g) + env(safe-area-inset-top) - 1px);
+  }
+
+  .lang-switch {
+    display: none;
+  }
+
+  .mbtn {
+    display: grid;
+    right: max(var(--g), env(safe-area-inset-right));
+    top: calc(var(--g) + env(safe-area-inset-top) - 1px);
+  }
+
+  .nav {
+    display: none;
+    top: calc(var(--g) + env(safe-area-inset-top) + 58px);
+    left: max(var(--g), env(safe-area-inset-left));
+    right: max(var(--g), env(safe-area-inset-right));
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 8px 16px 16px;
+    border-radius: 20px;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+  }
+
+  .nav-links a {
+    width: 100%;
+    height: 48px;
+    gap: 8px;
+    font-size: 17px;
+    border-bottom: 1px solid var(--char);
+  }
+
+  .nav .chev {
+    width: 11px;
+    height: 6px;
+  }
+
+  .nav .pill {
+    align-self: flex-start;
+    height: 48px;
+    padding-left: 20px;
+    gap: 12px;
+    font-size: 17px;
+  }
+
+  .nav .pill-disc {
+    width: 40px;
+    height: 40px;
+  }
+
+  .nav .pill-disc svg {
+    width: 5px;
+    height: 8px;
+  }
+}
+
+/* Phone in landscape: two-column menu */
+@media (max-height: 500px) and (min-aspect-ratio: 1/1) and (max-width: 649.98px) {
+  .nav.is-open .nav-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+  }
+}

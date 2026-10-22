@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The Coffee Shot · Coffee, food &amp; cocktails in Miraflores, Lima</title>
+  <meta name="description" content="Specialty coffee, breakfast, sandwiches, pizzas and signature cocktails at Calle Berlín 147, Miraflores, Lima. Vinyl Sessions on Fridays and Saturdays.">
+  <meta name="theme-color" content="#111111">
+
+  <!-- SEO: replace https://thecoffeeshot.example with the real domain (see README) -->
+  <link rel="canonical" href="https://thecoffeeshot.example/en/">
+  <link rel="alternate" hreflang="es" href="https://thecoffeeshot.example/">
+  <link rel="alternate" hreflang="en" href="https://thecoffeeshot.example/en/">
+  <link rel="alternate" hreflang="x-default" href="https://thecoffeeshot.example/">
+
+  <!-- Icons -->
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../assets/icons/icon-512.png" type="image/png" sizes="512x512">
+  <link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Coffee Shot">
+  <meta property="og:title" content="The Coffee Shot · Coffee, food &amp; cocktails in Miraflores, Lima">
+  <meta property="og:description" content="Specialty coffee, breakfast, sandwiches, pizzas and signature cocktails at Calle Berlín 147, Miraflores, Lima. Vinyl Sessions on Fridays and Saturdays.">
+  <meta property="og:url" content="https://thecoffeeshot.example/en/">
+  <meta property="og:image" content="https://thecoffeeshot.example/assets/images/hero-poster.jpg">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_PE">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","@id":"https://thecoffeeshot.example/#cafe","name":"The Coffee Shot · Vinyl Lounge Bar","url":"https://thecoffeeshot.example/en/","image":"https://thecoffeeshot.example/assets/images/hero-poster.jpg","logo":"https://thecoffeeshot.example/assets/icons/icon-512.png","telephone":"+51994751647","servesCuisine":["Specialty coffee","Breakfast","Sandwiches","Pizza","Cocktails"],"hasMenu":"https://thecoffeeshot.example/en/#carta","address":{"@type":"PostalAddress","streetAddress":"Calle Berlín 147","addressLocality":"Miraflores","addressRegion":"Lima","postalCode":"15074","addressCountry":"PE"},"sameAs":["https://www.instagram.com/thecoffeeshot.pe/","https://www.facebook.com/profile.php?id=61577368171971"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"09:00","closes":"01:00"}]}</script>
+
+  <!-- Hide the hero copy until js/modules/intro.js animates it in (4s failsafe if JS fails) -->
+  <script>
+    document.documentElement.classList.add("intro-pending");
+    setTimeout(function () { document.documentElement.classList.remove("intro-pending"); }, 4000);
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..700&amp;family=IBM+Plex+Mono:wght@400&amp;family=Inter:wght@400;500&amp;display=swap">
+
+  <link rel="preload" as="image" href="../assets/images/hero-poster.jpg">
+
+  <!-- Styles: tokens → base → layout → components → sections → motion -->
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components/buttons.css">
+  <link rel="stylesheet" href="../css/components/logo.css">
+  <link rel="stylesheet" href="../css/components/card.css">
+  <link rel="stylesheet" href="../css/components/chips.css">
+  <link rel="stylesheet" href="../css/components/header.css">
+  <link rel="stylesheet" href="../css/sections/hero.css">
+  <link rel="stylesheet" href="../css/sections/concept.css">
+  <link rel="stylesheet" href="../css/sections/menu.css">
+  <link rel="stylesheet" href="../css/sections/sessions.css">
+  <link rel="stylesheet" href="../css/sections/reviews.css">
+  <link rel="stylesheet" href="../css/sections/visit.css">
+  <link rel="stylesheet" href="../css/sections/footer.css">
+  <link rel="stylesheet" href="../css/motion.css">
+
+  <script type="module" src="../js/main.js"></script>
+</head>
+<body>
+
+<!-- ======================= Hero + header ======================= -->
+<section class="hero" id="top" aria-label="Introduction">
+  <video class="hero-media hero-video" src="../assets/video/hero-pingpong.mp4" poster="../assets/images/hero-poster.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+  <img class="hero-media hero-still" src="../assets/images/hero-poster.jpg" alt="">
+  <div class="hero-shade" aria-hidden="true"></div>
+
+  <header class="hdr">
+    <a class="logo" href="#top" data-intro="logo">
+      <img class="logo-img" src="../assets/images/logo.png" alt="The Coffee Shot · Vinyl Lounge Bar, home" width="520" height="400">
+    </a>
+
+    <nav id="site-nav" class="nav" aria-label="Main" data-intro="nav">
+      <ul class="nav-links">
+        <li><a href="#concepto" data-intro="navlink">About</a></li>
+        <li><a href="#carta" data-intro="navlink">Menu</a></li>
+        <li><a href="#sesiones" data-intro="navlink">Vinyl Sessions<svg class="chev" viewBox="0 0 11 6" aria-hidden="true" focusable="false"><path d="M.7.7 5.5 5.3 10.3.7"/></svg></a></li>
+        <li><a href="#opiniones" data-intro="navlink">Reviews</a></li>
+      </ul>
+      <div class="lang-switch mono" role="group" aria-label="Language">
+        <a href="../" hreflang="es" lang="es">ES</a>
+        <a href="./" hreflang="en" lang="en" aria-current="page">EN</a>
+      </div>
+      <a class="pill" href="#visitanos" data-intro="navlink">Visit us<span class="pill-disc"><svg class="arr" viewBox="0 0 4 7" aria-hidden="true" focusable="false"><path d="M.5.5 3.5 3.5.5 6.5"/></svg></span></a>
+    </nav>
+
+    <a class="lang-m mono" href="../" hreflang="es" lang="es" aria-label="Versión en español" data-intro="lang">ES</a>
+
+    <button class="mbtn" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu" data-intro="menu">
+      <svg viewBox="0 0 18 12" aria-hidden="true" focusable="false">
+        <path class="b1" d="M1 1h16"/>
+        <path class="b2" d="M1 6h16"/>
+        <path class="b3" d="M1 11h16"/>
+      </svg>
+    </button>
+  </header>
+
+  <div class="hero-copy">
+    <p class="eyebrow mono" data-intro="eyebrow">the coffeeSHOT · Vinyl Lounge Bar</p>
+    <h1 class="h1 display">
+      <span class="mask"><span class="line" data-intro="line">Coffee, food</span></span>
+      <span class="mask"><span class="line" data-intro="line">&amp; cocktails.</span></span>
+      <span class="mask"><span class="line amber" data-intro="line">Spin your day.</span></span>
+    </h1>
+    <p class="lede">
+      <span data-intro="lede">From the first espresso to the last cocktail.</span>
+      <span data-intro="lede">Calle Berlín 147, half a block from Parque Kennedy.</span>
+    </p>
+    <div class="actions">
+      <a class="pill cta" data-intro="cta" href="https://www.google.com/maps/dir/?api=1&amp;destination=Calle+Berl%C3%ADn+147%2C+Miraflores%2C+Lima" target="_blank" rel="noopener">Get directions<span class="pill-disc"><svg class="arr" viewBox="0 0 5 8" aria-hidden="true" focusable="false"><path d="M.6.6 4 4 .6 7.4"/></svg></span></a>
+      <a class="tlink" data-intro="tlink" href="#sesiones">Vinyl Sessions · Fri &amp; Sat</a>
+    </div>
+  </div>
+
+  <div class="hero-aside">
+    <p class="rating mono" data-intro="rating">★ <span data-rating>4.9</span> on Google · <span data-review-count>106</span> reviews</p>
+    <a class="cue" data-intro="cue" href="#concepto">Scroll to discover<svg class="chev" viewBox="0 0 11 6" aria-hidden="true" focusable="false"><path d="M.7.7 5.5 5.3 10.3.7"/></svg></a>
+  </div>
+</section>
+
+<main>
+
+  <!-- ======================= Concepto ======================= -->
+  <section class="sec" id="concepto">
+    <div class="wrap">
+      <p class="label mono rv"><span class="tag">About</span><span class="rule"></span></p>
+      <div class="concept">
+        <figure class="photo ar-43 parallax rv">
+          <img src="../assets/images/barra.jpg" alt="The Coffee Shot bar with its amber-lit wall of vinyl records, speakers and bottles behind the counter" loading="lazy">
+        </figure>
+        <div class="rv">
+          <h2 class="h2 display"><span>You come for the coffee.</span><span class="amber">You stay for everything else.</span></h2>
+          <p class="body-lg">At The Coffee Shot, the day starts with an espresso and ends with a cocktail. In between there are breakfasts, sandwiches, pizzas, desserts and fresh juices, with service our guests always mention. And on Fridays and Saturdays, we host themed nights with live DJs spinning vinyl.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= La carta ======================= -->
+  <section class="sec" id="carta" aria-labelledby="carta-t">
+    <div class="wrap">
+      <p class="label mono rv"><span class="tag">Menu</span><span class="rule"></span></p>
+      <div class="menu-head rv">
+        <h2 class="h2 display" id="carta-t">A menu for the whole day.</h2>
+        <p class="body-lg">Discover our all-day menu: from the morning espresso to the evening cocktail.</p>
+      </div>
+      <div class="menu-grid">
+        <article class="card menu-card rv">
+          <div class="photo ar-45">
+            <img src="../assets/images/carta/cafe.jpg" alt="Cup of coffee with latte art on a wooden table" loading="lazy">
+          </div>
+          <p class="num mono">01 · From the morning</p>
+          <h3 class="display">Coffee &amp; drinks</h3>
+          <p>Espresso, cold brew and specialty coffee drinks, hot or iced, plus fresh juices.</p>
+          <ul class="chips mono">
+            <li>Iced Honey Shot</li>
+          </ul>
+        </article>
+        <article class="card menu-card rv">
+          <div class="photo ar-45">
+            <img src="../assets/images/carta/desayunos.jpg" alt="Avocado toast with a fried egg, cherry tomatoes and sprouts on a dark plate" loading="lazy">
+          </div>
+          <p class="num mono">02 · Morning · After office</p>
+          <h3 class="display">Breakfast &amp; food</h3>
+          <p>Breakfast to start the day and, as it goes on, small plates, sandwiches and artisan pizzas for lunch or after office.</p>
+        </article>
+        <article class="card menu-card rv">
+          <div class="photo ar-45">
+            <img src="../assets/images/carta/postres.jpg" alt="Chocolate dessert with a crunchy base and a swirl of cream on a black plate" loading="lazy">
+          </div>
+          <p class="num mono">03 · To finish</p>
+          <h3 class="display">Desserts</h3>
+          <p>The sweet ending, any time of day.</p>
+        </article>
+        <article class="card menu-card rv">
+          <div class="photo ar-45">
+            <img src="../assets/images/carta/cocteleria.jpg" alt="Spritz glass with an orange slice in front of a neon sign" loading="lazy">
+          </div>
+          <p class="num mono">04 · Night</p>
+          <h3 class="display">Cocktails &amp; wine</h3>
+          <p>Signature drinks and wine for the night and for the Friday and Saturday Vinyl Sessions.</p>
+          <ul class="chips mono">
+            <li>Toasted Martini</li>
+            <li>Coffee Spritz</li>
+          </ul>
+        </article>
+      </div>
+      <div class="after">
+        <button class="btn-o" type="button" aria-expanded="false" aria-controls="carta-completa" data-carta-toggle><span data-label>See full menu</span><svg class="chev" viewBox="0 0 11 6" aria-hidden="true" focusable="false"><path d="M.7.7 5.5 5.3 10.3.7"/></svg></button>
+      </div>
+      <!-- Full menu, built by js/modules/carta.js from js/data/menu.js -->
+      <div class="carta-full" id="carta-completa" hidden>
+        <div class="carta-tabs" role="tablist"></div>
+        <div class="carta-panels"></div>
+        <p class="carta-note"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= Vinyl Sessions ======================= -->
+  <section class="sec sessions" id="sesiones">
+    <img class="sessions-bg" src="../assets/images/sesiones-bg.jpg" alt="" aria-hidden="true" loading="lazy">
+    <div class="sessions-veil" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="label mono rv"><span class="tag">Vinyl Sessions</span><span class="rule"></span></p>
+      <div class="sessions-grid">
+        <div class="rv">
+          <h2 class="h2 display">Fridays and Saturdays, from 9:00 p.m.</h2>
+          <p class="body-lg">Classic rock and pop, in English and Spanish, played on vinyl by DJs in the booth. No automated playlists: every record is picked by someone.</p>
+          <ul class="chips mono">
+            <li>Classic rock &amp; pop</li>
+            <li>English + Spanish</li>
+            <li>100% vinyl</li>
+          </ul>
+          <a class="arrow-link" href="https://www.instagram.com/thecoffeeshot.pe/" target="_blank" rel="noopener">Follow us on Instagram and never miss a session<svg class="arr" viewBox="0 0 5 8" aria-hidden="true" focusable="false"><path d="M.6.6 4 4 .6 7.4"/></svg></a>
+        </div>
+        <div class="deck rv">
+          <span class="vinyl-css" aria-hidden="true"></span>
+          <div class="photo ar-43">
+            <img src="../assets/images/tocadiscos.jpg" alt="Turntable on its wooden base at the bar, under an acrylic lid with an amber edge" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= Opiniones ======================= -->
+  <section class="sec" id="opiniones">
+    <div class="wrap">
+      <p class="label mono rv"><span class="tag">Reviews</span><span class="rule"></span></p>
+      <div class="reviews-head rv">
+        <h2 class="h2 display">What our guests say</h2>
+        <p class="score"><span class="big display"><span data-rating>4.9</span>/5</span><span class="mono">on Google · <span data-review-count>106</span> reviews</span></p>
+      </div>
+      <!-- Review cards, built by js/modules/reviews.js from js/data/reviews.js -->
+      <div class="quotes"></div>
+      <div class="after">
+        <a class="btn-o" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Coffee%20Shot%2C%20Calle%20Berl%C3%ADn%20147%2C%20Miraflores%2C%20Lima" data-link="googleReviews" target="_blank" rel="noopener">Read reviews on Google<svg class="arr" viewBox="0 0 5 8" aria-hidden="true" focusable="false"><path d="M.6.6 4 4 .6 7.4"/></svg></a>
+        <a class="btn-o" href="#" data-link="writeReview" data-requires="writeReview" target="_blank" rel="noopener" hidden>Write a review</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= Visítanos ======================= -->
+  <section class="sec" id="visitanos">
+    <div class="wrap">
+      <p class="label mono rv"><span class="tag">Visit us</span><span class="rule"></span></p>
+      <div class="visit">
+        <div class="photo ar-43 rv">
+          <img src="../assets/images/fachada.jpg" alt="The Coffee Shot black façade at night on Calle Berlín, with its lit sign and the sidewalk in front" loading="lazy">
+        </div>
+        <div class="rv">
+          <h2 class="h2 display">Look for the black façade at Calle Berlín 147.</h2>
+          <p class="addr">Half a block from Parque Kennedy · Miraflores, Lima 15074</p>
+          <dl class="hours mono">
+            <dt>Mon–Thu</dt><dd>09:00–23:00</dd>
+            <dt>Fri–Sat</dt><dd>09:00–01:00</dd>
+            <dt>Sunday</dt><dd>Closed</dd>
+          </dl>
+          <p class="sess-note mono">Vinyl Sessions: Fri &amp; Sat from 9:00 p.m.</p>
+          <div class="visit-actions">
+            <a class="pill pill-lg" href="https://www.google.com/maps/dir/?api=1&amp;destination=Calle+Berl%C3%ADn+147%2C+Miraflores%2C+Lima" target="_blank" rel="noopener">Get directions<span class="pill-disc"><svg class="arr" viewBox="0 0 5 8" aria-hidden="true" focusable="false"><path d="M.6.6 4 4 .6 7.4"/></svg></span></a>
+            <a class="btn-o" href="tel:+51994751647" aria-label="Call +51 994 751 647">Call · +51 994 751 647</a>
+            <a class="btn-o" href="https://www.instagram.com/thecoffeeshot.pe/" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn-o" href="https://www.facebook.com/profile.php?id=61577368171971" data-link="facebook" data-requires="facebook" target="_blank" rel="noopener">Facebook</a>
+          </div>
+          <p class="fine">Hours may change; check our Instagram before you come.</p>
+        </div>
+      </div>
+      <div class="map rv">
+        <iframe class="map-frame" title="Map of The Coffee Shot at Calle Berlín 147, Miraflores" src="https://www.google.com/maps?q=Calle+Berl%C3%ADn+147,+Miraflores,+Lima&amp;hl=en&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <div class="map-text">
+          <span class="display">Calle Berlín 147</span>
+          <span class="mono">Miraflores · Lima 15074</span>
+        </div>
+        <a class="btn-o" href="https://www.google.com/maps/search/?api=1&amp;query=Calle+Berl%C3%ADn+147%2C+Miraflores%2C+Lima" target="_blank" rel="noopener">Open in Google Maps<svg class="arr" viewBox="0 0 5 8" aria-hidden="true" focusable="false"><path d="M.6.6 4 4 .6 7.4"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================= Footer ======================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="foot-logo" href="#top">
+          <img class="logo-img" src="../assets/images/logo.png" alt="The Coffee Shot · Vinyl Lounge Bar, home" width="520" height="400" loading="lazy">
+        </a>
+        <p class="name mono">the coffeeSHOT · Vinyl Lounge Bar</p>
+        <p class="tagline display">One shot at a time.</p>
+      </div>
+      <address class="foot-info">
+        <span>Calle Berlín 147, Miraflores, Lima 15074</span>
+        <a href="tel:+51994751647">+51 994 751 647</a>
+        <a href="https://www.instagram.com/thecoffeeshot.pe/" target="_blank" rel="noopener">Instagram · @thecoffeeshot.pe</a>
+        <a href="https://www.facebook.com/profile.php?id=61577368171971" data-link="facebook" data-requires="facebook" target="_blank" rel="noopener">Facebook · The Coffee Shot</a>
+        <a href="../" hreflang="es" lang="es">Versión en español</a>
+        <span class="copy mono">© 2026 The Coffee Shot</span>
+      </address>
+    </div>
+    <div class="foot-bottom">
+      <a class="totop" href="#top">Back to top<svg class="chev" viewBox="0 0 11 6" aria-hidden="true" focusable="false"><path d="M.7.7 5.5 5.3 10.3.7"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= Templates ======================= -->
+<template id="menu-item-template">
+  <li class="mi">
+    <div class="mi-head">
+      <h3 class="mi-name display"></h3>
+      <span class="mi-tag mono"></span>
+      <span class="mi-price mono"></span>
+    </div>
+    <p class="mi-desc"></p>
+  </li>
+</template>
+
+<template id="review-template">
+  <figure class="card quote rv">
+    <blockquote><span class="q">“</span><span class="q-text"></span>.<span class="q">”</span></blockquote>
+    <figcaption><span class="who"></span><span class="src mono"></span></figcaption>
+  </figure>
+</template>
+
+</body>
+</html>

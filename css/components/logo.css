@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Logo: assets/images/logo.png (white on transparent, cropped from logo.jpeg)
+   ========================================================================== */
+
+.logo-img {
+  display: block;
+  width: auto;
+  height: 100%;
+}
+
+/* Header, top left over the hero video */
+.logo {
+  display: block;
+  height: calc(58 * var(--u));
+}
+
+.logo .logo-img {
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .45));
+}
+
+/* Footer */
+.foot-logo {
+  display: block;
+  align-self: flex-start;
+  height: 88px;
+}
