@@ -1,7 +1,16 @@
+// Cloudflare Workers, static assets only (no Worker script).
+// Deploy:  npx wrangler@4 deploy        Local:  npx wrangler@4 dev
 {
   "name": "the-coffee-shot",
   "compatibility_date": "2026-10-01",
   "assets": {
-    "directory": "./"
-  }
+    "directory": "./",
+    // Unknown paths get 404.html with a real 404 status (no soft 404s for Google)
+    "not_found_handling": "404-page",
+    // /en -> /en/
+    "html_handling": "auto-trailing-slash"
+  },
+  "workers_dev": true,
+  // Per-version preview URLs off so only the canonical URL gets indexed
+  "preview_urls": false
 }

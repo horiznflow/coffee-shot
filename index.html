@@ -7,7 +7,7 @@
   <meta name="description" content="Café de especialidad, desayunos, sándwiches, pizzas y cócteles de autor en Calle Berlín 147, Miraflores. Vinyl Sessions los viernes y sábados.">
   <meta name="theme-color" content="#111111">
 
-  <!-- SEO: replace https://thecoffeeshot.example with the real domain (see README) -->
+  <!-- SEO: site URL. Change it in every file with: node scripts/set-domain.mjs https://... -->
   <link rel="canonical" href="https://thecoffeeshot.example/">
   <link rel="alternate" hreflang="es" href="https://thecoffeeshot.example/">
   <link rel="alternate" hreflang="en" href="https://thecoffeeshot.example/en/">
@@ -32,10 +32,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","@id":"https://thecoffeeshot.example/#cafe","name":"The Coffee Shot · Vinyl Lounge Bar","url":"https://thecoffeeshot.example/","image":"https://thecoffeeshot.example/assets/images/hero-poster.jpg","logo":"https://thecoffeeshot.example/assets/icons/icon-512.png","telephone":"+51994751647","servesCuisine":["Café de especialidad","Desayunos","Sándwiches","Pizzas","Coctelería"],"hasMenu":"https://thecoffeeshot.example/#carta","address":{"@type":"PostalAddress","streetAddress":"Calle Berlín 147","addressLocality":"Miraflores","addressRegion":"Lima","postalCode":"15074","addressCountry":"PE"},"sameAs":["https://www.instagram.com/thecoffeeshot.pe/","https://www.facebook.com/profile.php?id=61577368171971"],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"23:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"09:00","closes":"01:00"}]}</script>
 
   <!-- Hide the hero copy until js/modules/intro.js animates it in (4s failsafe if JS fails) -->
-  <script>
-    document.documentElement.classList.add("intro-pending");
-    setTimeout(function () { document.documentElement.classList.remove("intro-pending"); }, 4000);
-  </script>
+  <script>document.documentElement.classList.add("intro-pending");setTimeout(function(){document.documentElement.classList.remove("intro-pending")},4000);</script>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

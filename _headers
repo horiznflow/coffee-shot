@@ -1,0 +1,24 @@
+# Response headers for Cloudflare static assets (this file is not served).
+# CSP: the sha256 hash allows the inline intro-pending script in <head> of
+# index.html and en/index.html. If that script changes, recompute the hash.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-q7LHorbByj917q540riVAn+WE4R74rq2jQpR7DgOtIk='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; frame-src https://www.google.com https://maps.google.com; connect-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'
+
+/en/*
+  Content-Language: en
+
+/
+  Content-Language: es
+
+# Images, video and icons: cache 7 days in browsers and at the edge
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/favicon.ico
+  Cache-Control: public, max-age=604800

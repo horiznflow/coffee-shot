@@ -1,0 +1,52 @@
+/* ==========================================================================
+   404 page (404.html)
+   ========================================================================== */
+
+.nf {
+  width: min(var(--container), 100% - 2 * var(--gs));
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 48px 0 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nf-logo {
+  display: block;
+  align-self: flex-start;
+  height: 72px;
+  margin-bottom: 72px;
+}
+
+.nf-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 64px;
+}
+
+.nf-cols section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nf .h2 span {
+  display: block;
+}
+
+.nf .body-lg {
+  margin-bottom: 32px;
+}
+
+@media (max-width: 899.98px) {
+  .nf-cols {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+  }
+
+  .nf-logo {
+    margin-bottom: 48px;
+  }
+}

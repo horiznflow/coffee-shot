@@ -7,21 +7,59 @@ Static bilingual landing page (vanilla HTML, CSS, JS modules). No build step.
 
 ## Run locally
 
-ES modules need a local server (they don't load from `file://`):
+ES modules need a local server (they don't load from `file://`). To preview exactly
+as Cloudflare serves it (headers, 404 page, ignored files):
 
 ```bash
-npx serve .
-# or
+npx wrangler@4 dev          # http://localhost:8787
+# quick alternative without Cloudflare behavior:
 python -m http.server 8000
 ```
+
+## Deploy (Cloudflare Workers, static assets)
+
+Config: `wrangler.jsonc` (assets-only Worker, no script), `_headers`, `.assetsignore`, `404.html`.
+
+First deploy:
+
+```bash
+npx wrangler@4 login                 # once, opens the browser
+npx wrangler@4 deploy                # prints the URL: https://the-coffee-shot.<account>.workers.dev
+node scripts/set-domain.mjs https://the-coffee-shot.<account>.workers.dev
+npx wrangler@4 deploy                # redeploy with the real URL in canonical/hreflang/sitemap
+```
+
+Later deploys: `npx wrangler@4 deploy`.
+
+What is configured:
+
+- Only the website is published. `.assetsignore` leaves out README, wrangler config,
+  `scripts/` and the unused source images.
+- Unknown URLs return `404.html` (bilingual) with a real 404 status.
+- `/en` redirects to `/en/`, and `/index.html` to `/`.
+- `_headers` sets the security headers (including a Content-Security-Policy), `Content-Language`,
+  and a 7-day cache for `/assets/*`. CSS/JS revalidate on every visit, so edits show up right away.
+- Per-version preview URLs are off, so Google only sees the main URL.
+
+Content-Security-Policy note: it allows the inline `<script>` in `<head>` by its sha256 hash.
+If that script changes, recompute the hash in `_headers`, or the hero copy shows only after
+its 4-second fallback.
+
+Custom domain: add it in Cloudflare (Workers & Pages → the-coffee-shot → Settings → Domains & Routes),
+then run `node scripts/set-domain.mjs https://www.your-domain.pe` and deploy again.
 
 ## Structure
 
 ```
 index.html              Spanish page
 en/index.html           English page (same markup, paths prefixed with ../)
+404.html                Bilingual not-found page (served by Cloudflare for unknown URLs)
 favicon.ico             Browser tab icon
 robots.txt, sitemap.xml SEO (both languages, with hreflang)
+_headers                Cloudflare response headers (security, cache, language)
+wrangler.jsonc          Cloudflare Workers config (static assets)
+.assetsignore           Files Cloudflare must not publish
+scripts/set-domain.mjs  Changes the site URL used for SEO in every file
 assets/
   icons/                apple-touch-icon.png, icon-512.png (from logo.jpeg)
   images/               logo.png (transparent), hero-poster, barra, cafe, sesiones-bg, tocadiscos, fachada
@@ -60,9 +98,12 @@ Page copy (headings, paragraphs, hours, alt texts) lives in the HTML: edit **bot
 
 ## Domain (SEO)
 
-The pages use the placeholder `https://thecoffeeshot.example` for the canonical URL,
-hreflang links, Open Graph and JSON-LD. When the domain is known, replace it everywhere in:
-`index.html`, `en/index.html`, `robots.txt`, `sitemap.xml`.
+The canonical URL, hreflang links, Open Graph, JSON-LD, `robots.txt` and `sitemap.xml`
+share one site URL (placeholder: `https://thecoffeeshot.example`). Change it in all files with:
+
+```bash
+node scripts/set-domain.mjs https://new-url
+```
 
 ## Hero video
 
@@ -75,7 +116,7 @@ ffmpeg -i hero.mp4 -filter_complex "[0:v]reverse[r];[0:v][r]concat=n=2:v=1:a=0,f
 
 ## Pending from the client
 
-- Domain (replace `https://thecoffeeshot.example`, see above)
+- Domain: until there is one, use the workers.dev URL after the first deploy (see Deploy)
 - Real menu: products, descriptions and prices for `js/data/menu.js`
 - Confirm the items taken from the web: Iced Honey Shot, Toasted Martini, Coffee Spritz, pizzas, vinos
 - Larger photos for the Desayunos and Cócteles cards (current sources are 340px and 243px wide)
